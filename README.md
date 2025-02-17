@@ -1,5 +1,4 @@
 # cub3D - 3D Raycasting Engine  
-![Screen2](https://github.com/user-attachments/assets/135a8cf2-6633-491b-8d8a-fc1309be96ec)
 
 ## 📜 Overview  
 **cub3D** is a **raycasting-based** 3D graphics project inspired by **Wolfenstein 3D**. It is built using **MiniLibX** and written in **C**. The project renders a **first-person perspective** of a maze and allows the player to navigate using keyboard controls.  
@@ -30,6 +29,7 @@ To build and run the project, use the provided **Makefile**:
 make
 ./cub3D maps/example.cub
 ```
+![Screen2](https://github.com/user-attachments/assets/135a8cf2-6633-491b-8d8a-fc1309be96ec)
 
 ## 🎮 Controls  
 | Key | Action |
