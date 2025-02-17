@@ -6,7 +6,7 @@
 /*   By: pwojnaro <pwojnaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 09:32:54 by piotrwojnar       #+#    #+#             */
-/*   Updated: 2025/02/08 12:38:22 by pwojnaro         ###   ########.fr       */
+/*   Updated: 2025/02/10 14:38:07 by pwojnaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ bool	init_config_and_map(t_config *config, t_memory *mem,
 		return (false);
 	validate_map(&config->map);
 	config->map.mlx = mlx_init(WINDOW_WIDTH, WINDOW_HEIGHT,
-			"Cube3D - Textured Walls", true);
+			"Cube3D - Textured Walls", false);
 	if (!config->map.mlx)
 	{
 		ft_clean(&config->map, mem, &config->resources);
@@ -94,4 +94,22 @@ void	game_loop(t_map *map, t_config *config)
 	mlx_key_hook(map->mlx, key_event_handler, config);
 	mlx_loop_hook(map->mlx, render_scene_wrapper, data);
 	mlx_loop(map->mlx);
+}
+
+void	validate_config(t_config *config)
+{
+	if (config->colors.ceiling[0] == -1
+		|| config->colors.ceiling[1] == -1
+		|| config->colors.ceiling[2] == -1)
+	{
+		ft_printf("[ERROR] Missing ceiling color C in configuration.\n");
+		exit(1);
+	}
+	if (config->colors.floor[0] == -1
+		|| config->colors.floor[1] == -1
+		|| config->colors.floor[2] == -1)
+	{
+		ft_printf("[ERROR] Missing floor color F in configuration.\n");
+		exit(1);
+	}
 }

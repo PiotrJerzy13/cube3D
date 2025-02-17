@@ -6,7 +6,7 @@
 /*   By: pwojnaro <pwojnaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 11:58:20 by piotrwojnar       #+#    #+#             */
-/*   Updated: 2025/02/08 13:12:57 by pwojnaro         ###   ########.fr       */
+/*   Updated: 2025/02/10 12:36:24 by pwojnaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,5 +161,9 @@ void		draw_square(mlx_image_t *img, t_square square);
 mlx_image_t	*create_minimap_image(mlx_t *mlx, int width, int height);
 void		draw_map_grid(mlx_image_t *minimap_img, t_config *config);
 float		get_player_angle(char c);
+void		ft_wall_err(const char *message, int value, const char *context);
+void		ft_texture_err(const char *message, int index, t_resources *res,
+				mlx_t *mlx);
+char		*err_path(const char *message, char *line);
 
 #endif
